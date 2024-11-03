@@ -94,7 +94,6 @@ body {
   font-size: 15rem;
 }
 
-
 .six {
   position: relative;
   top: 10vh;
@@ -201,6 +200,14 @@ body {
   fill: #9a90da;
   left: 87vw;
   top: 94vh;
+}
+
+.the-link h4 {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: lighter;
+  color: #032c40;
+  
 }
 
 .wish-hbd {
