@@ -2,7 +2,7 @@
 
 ## 📝 Contributing
 
-If you have any ideas to make it more interesting, please submit a pull request or create an issue for a feature request.
+ree 
 
 ## 🤝 License
 
