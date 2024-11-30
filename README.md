@@ -7,7 +7,7 @@ ree
 
 ## 🤝 License
 
-### [MIT](LICENSE)
+> [MIT](LICENSE)
 
 > Github [@fajarghifar](https://github.com/fajarghifar) &nbsp;&middot;&nbsp;
 > Youtube [@fajarghifar](https://www.youtube.com/@fajarghifar/) &nbsp;&middot;&nbsp;
