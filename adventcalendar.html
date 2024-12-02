@@ -143,29 +143,27 @@
             localStorage.setItem("alreadySeen", seen.join(","));
         }       
 
-        function clicking(id, content) {
-    // Get all boxes
-    const allBoxes = document.querySelectorAll('.boxes');
-    
-    // Loop through each box
-    allBoxes.forEach(box => {
-        if (box.id === id) {
-            // Toggle the clicked box
-            if (box.classList.contains('open')) {
+        <script>
+        const content9 = "On the 9th day of Christmas a robot gave to me... Content 9";
+        const content11 = "On the 11th day of Christmas a robot gave to me... Content 11";
+        const content7 = "On the 7th day of Christmas a robot gave to me... Content 7";
+        const content16 = "On the 16th day of Christmas a robot gave to me... Content 16";
+
+        function toggleBox(id, content) {
+            // Close all open boxes
+            const allBoxes = document.querySelectorAll('.boxes');
+            allBoxes.forEach(box => {
                 box.classList.remove('open');
-                box.innerHTML = id; // Reset box content to original
-            } else {
-                box.classList.add('open');
-                box.innerHTML = content; // Show the content
+                box.innerHTML = box.id; // Reset content to the original number
+            });
+
+            // Open the clicked box if not already open
+            const clickedBox = document.getElementById(id);
+            if (!clickedBox.classList.contains('open')) {
+                clickedBox.classList.add('open');
+                clickedBox.innerHTML = content;
             }
-        } else {
-            // Close all other boxes
-            box.classList.remove('open');
-            box.innerHTML = box.id; // Reset content of other boxes
         }
-    });
-}
-        }      
     </script>
 </body>
 </html>
