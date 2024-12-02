@@ -177,6 +177,21 @@
                 } 
             } 
         }      
+function toggleBox(id, content) {
+    // Step 1: Close all open boxes
+    const allBoxes = document.querySelectorAll('.boxes'); // Select all boxes
+    allBoxes.forEach(box => {
+        box.classList.remove('open'); // Remove the "open" class from all boxes
+        box.innerHTML = box.id; // Reset content to show the box's number
+    });
+
+    // Step 2: Open the clicked box (if it wasn't already open)
+    const clickedBox = document.getElementById(id); // Get the clicked box by ID
+    if (!clickedBox.classList.contains('open')) { // Check if it's not already open
+        clickedBox.classList.add('open'); // Add the "open" class to the clicked box
+        clickedBox.innerHTML = content; // Change the content to the passed-in content
+    }
+}
     </script>
 </body>
 </html>
