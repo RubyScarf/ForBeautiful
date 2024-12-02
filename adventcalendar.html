@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/png" href="https://cdn.pixabay.com/photo/2017/11/02/03/47/snowflake-2910087_1280.png" />
+    <title>Señor Calendar</title>
+    <style>
+        body, html { 
+            margin: auto; 
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            background-size: cover;
+        }
+        .calendar {
+            max-width: 1000px;
+            text-align: center;
+            margin: auto;
+            padding-top: 2%;
+        } 
+        .boxes {
+            background-color: rgba(0, 30, 161, 0.2);
+            color: rgba(10, 13, 166, 1);
+            text-shadow: 2px 2px rgba(0, 30, 161, 0.7);
+            padding: 20px;
+            border: 3px solid rgba(88, 0, 150, 0.35);
+            display: inline-block;
+            height: 80px;
+            width: 80px;
+            text-align: center;
+            font: 60px cursive;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 25px;
+        }
+        .red {
+            background-color: rgba(88, 0, 150, 0.2);
+            border: 3px solid rgba(0, 30, 161, 0.3);
+        }
+        .open {
+            height: 300px;  /* 500px */
+            width: 300px; /* 800px or 80vw */
+            font: 25px cursive;
+            text-shadow: none;
+            color: rgba(35, 24, 71, 1);
+            padding: 20px;
+            background-color: rgba(159, 186, 222, 0.815);
+        }
+        .boxes:hover {
+            background-color: rgba(0, 30, 161, 0.5);
+        }
+        .boxes.red:hover {
+            background-color: rgba(88, 0, 150, 0.5);
+        }
+        .boxes.open:hover {
+            background-color: rgba(27, 53, 66, 0.268);
+        }          
+    </style>
+</head>
+<body>
+    <br>
+    <h1 style="color: #000; font-size: 3rem; font-family: ui-rounded; text-align: center">Advent Calendar</h1>
+    <div class="calendar">
+        <div id="9" class="boxes red" onclick="clicking('9', content9)"> 9 </div>
+        <div id="11" class="boxes" onclick="clicking('11', content11)"> 11 </div> 
+        <div id="7" class="boxes red" onclick="clicking('7', content7)"> 7 </div>  
+        <div id="16" class="boxes" onclick="clicking('16', content16)"> 16 </div>
+        <div id="2" class="boxes red" onclick="clicking('2', content2)"> 2 </div>
+        <div id="15" class="boxes" onclick="clicking('15', content15)"> 15 </div> 
+        <div id="1" class="boxes" onclick="clicking('1', content1)"> 1 </div>
+        <div id="20" class="boxes red" onclick="clicking('20', content20)"> 20 </div>   
+        <div id="23" class="boxes" onclick="clicking('23', content23)"> 23 </div>
+        <div id="8" class="boxes red" onclick="clicking('8', content8)"> 8 </div> 
+        <div id="14" class="boxes" onclick="clicking('14', content14)"> 14 </div>
+        <div id="17" class="boxes red" onclick="clicking('17', content17)"> 17 </div>
+        <div id="4" class="boxes red" onclick="clicking('4', content4)"> 4 </div>
+        <div id="13" class="boxes" onclick="clicking('13', content13)"> 13 </div>
+        <div id="18" class="boxes red" onclick="clicking('18',content18)"> 18 </div>
+        <div id="10" class="boxes" onclick="clicking('10', content10)"> 10 </div>
+        <div id="3" class="boxes red" onclick="clicking('3', content3)"> 3 </div>
+        <div id="19" class="boxes" onclick="clicking('19', content19)"> 19 </div>
+        <div id="22" class="boxes" onclick="clicking('22', content22)"> 22 </div>
+        <div id="12" class="boxes red" onclick="clicking('12', content12)"> 12 </div>
+        <div id="21" class="boxes" onclick="clicking('21', content21)"> 21 </div>
+        <div id="24" class="boxes red" onclick="clicking('24', content24)"> 24 </div>
+        <div id="5" class="boxes" onclick="clicking('5', content5)"> 5 </div>
+        <div id="6" class="boxes red" onclick="clicking('6',content6)"> 6 </div>
+        <div style= "visibility: hidden" id="25" class="boxes" onclick="clicking('25', content25)"> 25 </div>
+        <div style= "visibility: hidden" id="25" class="boxes" onclick="clicking('25', content25)"> 25 </div>
+    </div>
+
+    <script>
+        function getSeen() {
+            let stored = localStorage.getItem("alreadySeen");
+            if (stored != null) {
+                stored = stored.split(",");
+                for(var i in stored) stored[i] = parseInt(stored[i]);
+            } else {
+                stored = [];
+            }    
+            return stored;
+        }
+        let seen = getSeen(); 
+        for(var i in seen) {
+                const elem = document.getElementById(seen[i]);
+                elem.innerHTML = ":)"
+        }
+
+        const year = 2024;
+        const content1 = "On the 1st day of Christmas a robot gave to me... " + '<br><img height="200" src="./img/quote_1.png">' /* xmas quote */;
+        const content2 = "On the 2nd day of Christmas a robot gave to me... " + '<br><img height="200" src="./img/quote_2.png">' /* xmas quote */;
+        const content3 = "On the 3rd day of Christmas a robot gave to me... " + '<br><img height="200" src="./img/joke_1.png">' /* xmas joke */;
+        const content4 = "On the 4th day of Christmas a robot gave to me... " + '<br><img height="200" src="./img/joke_2.png">' /* xmas joke */;
+        const content5 = "On the 5th day of Christmas a robot gave to me... " + '<br><iframe width="auto" height="200" src="https://www.youtube-nocookie.com/embed/Rnil5LyK_B0?si=wdY-rHOtBkBanNFx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>' /* xmas song */; 
+        const content6 = "On the 6th day of Christmas a robot gave to me... " + '<br><iframe width="auto" height="200" src="https://www.youtube-nocookie.com/embed/nLGBEETtEPc?si=G2aHGzbLvWzbxPdR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>' /* xmas song */;
+        const content7 = "On the 7th day of Christmas a robot gave to me... " + '<br><iframe width="auto" height="200" src="https://www.youtube-nocookie.com/embed/5WVikpJzeIA?si=6pzYXwa3jauVizLN&amp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>' /* xmas song */;
+        const content8 = "On the 8th day of Christmas a robot gave to me... " + '<br><iframe width="auto" height="200" src="https://www.youtube-nocookie.com/embed/gM3fslLSt10?si=RA76pSaH7o0nnusE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>' /* xmas funny clip */;
+        const content9 = "On the 9th day of Christmas a robot gave to me... " + '<br><iframe width="auto" height="200" src="https://www.youtube-nocookie.com/embed/26y-dYCQ3Qg?si=tcbSIzXN7LO0zmlH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>' /* xmas funny clip */;
+        const content10 = "On the 10th day of Christmas a robot gave to me... " + '<br><iframe width="auto" height="200" src="https://www.youtube-nocookie.com/embed/ynFWe6TssU0?si=OttaQCzX7m8GQKvG&amp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>' /* xmas funny clip */;
+        const content11 = "On the 11th day of Christmas a robot gave to me... " + '<br><iframe width="auto" height="200" src="https://www.youtube-nocookie.com/embed/hZC7zuhkLRU?si=9dpoxB-ExoNiYJZm&amp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>' /* xmas funny clip */;
+        const content12 = "On the 12th day of Christmas a robot gave to me... " + '<br><a href="./pages/story_1.html"><img width="200" src="./img/story_1.png"></a>' /* xmas story */;
+        const content13 = "On the 13th day of Christmas a robot gave to me... " + '<br><a href="./pages/story_2.html"><img width="200" src="./img/story_2.png"></a>' /* xmas story */;
+        const content14 = "On the 14th day of Christmas a robot gave to me... " + '<br><a href="./pages/story_3.html"><img width="200" src="./img/story_3.png"></a>' /* xmas story */;
+        const content15 = "On the 15th day of Christmas a robot gave to me... " + '<br><a href="https://crosswordlabs.com/view/weihnachtszeit-25"><img width="auto" height="200" src="./img/crossword_1.png"></a>' /* xmas crossword */;
+        const content16 = "On the 16th day of Christmas a robot gave to me... " + '<br><a href="https://crosswordlabs.com/view/noel-liste-de-vocabulaire"><img width="auto" height="200" src="./img/crossword_2.png"></a>' /* xmas crossword */;
+        const content17 = "On the 17th day of Christmas a robot gave to me... " + '<br><a href="https://crosswordlabs.com/view/jul-i-helsingfors"><img width="auto" height="200" src="./img/crossword_3.png"></a>' /* xmas crossword */;
+        const content18 = "On the 18th day of Christmas a robot gave to me... " + '<br><a href="https://crosswordlabs.com/view/holiday-movies-23"><img width="auto" height="200" src="./img/crossword_4.png"></a>' /* xmas crossword */;
+        const content19 = "On the 19th day of Christmas a robot gave to me... " + '<br><a href="https://www.sporcle.com/games/LTH/last_christmas"><img height="200" src="./img/quiz_1.png"></a>' /* xmas quiz */;
+        const content20 = "On the 20th day of Christmas a robot gave to me... " + '<br><a href="https://www.sporcle.com/games/emilymarie07/christmas-songs-in-emojis"><img height="200" src="./img/quiz_2.png"></a>' /* xmas quiz */;
+        const content21 = "On the 21st day of Christmas a robot gave to me... " + '<br><a href="https://www.sporcle.com/games/vikZ/christmas-trivia-field"><img height="200" src="./img/quiz_3.png"></a>' /* xmas quiz */;
+        const content22 = "On the 22nd day of Christmas a robot gave to me... " + '<br><a href="https://create.kahoot.it/details/d5769f1f-e7df-48af-88ef-208c158e33ad"><img height="200" src="./img/kahoot_1.png"></a>' /* xmas kahoot*/;
+        const content23 = "On the 23rd day of Christmas a robot gave to me... " + '<br><a href="https://create.kahoot.it/details/e983ba37-6b48-4ed5-bb7f-7a15239196a5"><img height="200" src="./img/kahoot_2.png"></a>' /* xmas kahoot */;
+        const content24 = "On the 24th day of Christmas a robot gave to me... " + '<br><a href="https://rubyscarf.github.io/SirMorado/pages/xmasday.html"></a>' /* xmas celebration */;
+        const content25 = "On the 25th day of Christmas a robot gave to me... " /* NOPE */
+
+        function setSeen(id) {
+            const seen = getSeen();
+            if(seen.indexOf(id) == -1) {
+                seen.push(id);
+            }     
+            localStorage.setItem("alreadySeen", seen.join(","));
+        }       
+
+        function clicking(id, content) {
+            const elem = document.getElementById(id);
+            const today = new Date();
+            const future = new Date(year, 11, parseInt(id), 00, 01, 01);
+            elem.classList.toggle("open");
+            if (future < today) {
+                if (elem.innerHTML == parseInt(id)) {
+                    setSeen(parseInt(id));
+                    elem.innerHTML = content;
+                } else if (elem.innerHTML == ":)") {
+                    elem.innerHTML = content;
+                } else {
+                    elem.innerHTML = ":)"
+                }
+                elem.scrollIntoView();
+            } else {
+                if (elem.innerHTML == parseInt(id)) {
+                    elem.innerHTML = "<p style='color: black; font-size: 15px;'>The time has not come yet!</p>";
+                    elem.scrollIntoView();
+                } else {
+                    elem.innerHTML = parseInt(id)
+                } 
+            } 
+            function clicking(id, content) {
+    // Get all boxes
+    const allBoxes = document.querySelectorAll('.boxes');
+    
+    // Loop through each box
+    allBoxes.forEach(box => {
+        if (box.id === id) {
+            // Toggle the clicked box
+            if (box.classList.contains('open')) {
+                box.classList.remove('open');
+                box.innerHTML = id; // Reset box content to original
+            } else {
+                box.classList.add('open');
+                box.innerHTML = content; // Show the content
+            }
+        } else {
+            // Close all other boxes
+            box.classList.remove('open');
+            box.innerHTML = box.id; // Reset content of other boxes
+        }
+    });
+}
+        }      
+    </script>
+</body>
+</html>
