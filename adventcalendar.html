@@ -112,10 +112,12 @@
             }    
             return stored;
         }
+        
         let seen = getSeen(); 
         for(var i in seen) {
                 const elem = document.getElementById(seen[i]);
-                elem.innerHTML = ":)"
+                elem.innerHTML = ":)";
+                elem.classList.add('open');
         }
 
         const year = 2024;
