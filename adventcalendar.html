@@ -164,6 +164,31 @@
         });
 
         function clicking(id, content) {
+            let box = document.getElementById(id);
+            let isOpen = box.classList.contains('open');
+            if (isOpen) {
+                // Close the box if it's already open
+                box.classList.remove('open');
+                box.innerHTML = id;
+            } else {
+                // Close all other boxes before opening the clicked box
+                let allBoxes = document.querySelectorAll('.boxes');
+                allBoxes.forEach(function(b) {
+                    b.classList.remove('open');
+                    let boxId = b.id;
+                    if (!seen.includes(parseInt(boxId))) {
+                        b.innerHTML = boxId; // Reset the content to the day number
+                    }
+                });
+                box.classList.add('open');
+                box.innerHTML = content;
+                // Save this box as already seen
+                if (!seen.includes(parseInt(id))) {
+                    seen.push(parseInt(id));
+                    localStorage.setItem("alreadySeen", seen.join(","));
+                }
+            }
+            
             console.log(`Clicked ID: ${id}, Content: ${content}`); // Debugging
         
             const elem = document.getElementById(id);
