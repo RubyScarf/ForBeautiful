@@ -154,6 +154,21 @@
         }       
 
         function clicking(id, content) {
+            // Close all open boxes
+            const allBoxes = document.querySelectorAll(".boxes");
+            allBoxes.forEach(box => {
+                if (box.classList.contains("open")) {
+                    box.classList.remove("open");
+                    box.innerHTML = box.id; // Reset the content to the box number
+                }
+            });
+        
+            // Open the clicked box
+            const clickedBox = document.getElementById(id);
+            if (!clickedBox.classList.contains("open")) {
+                clickedBox.classList.add("open");
+                clickedBox.innerHTML = content; // Set the new content
+            }
             const elem = document.getElementById(id);
             const today = new Date();
             const future = new Date(year, 11, parseInt(id), 00, 01, 01);
