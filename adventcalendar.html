@@ -169,44 +169,43 @@
                 clickedBox.classList.add("open");
                 clickedBox.innerHTML = content; // Set the new content
             }
-            const elem = document.getElementById(id);
-            const today = new Date();
-            const future = new Date(year, 11, parseInt(id), 00, 01, 01);
-            elem.classList.toggle("open");
-            if (future < today) {
-                if (elem.innerHTML == parseInt(id)) {
-                    setSeen(parseInt(id));
-                    elem.innerHTML = content;
-                } else if (elem.innerHTML == ":)") {
-                    elem.innerHTML = content;
-                } else {
-                    elem.innerHTML = ":)"
-                }
-                elem.scrollIntoView();
-            } else {
-                if (elem.innerHTML == parseInt(id)) {
-                    elem.innerHTML = "<p style='color: black; font-size: 15px;'>The time has not come yet!</p>";
-                    elem.scrollIntoView();
-                } else {
-                    elem.innerHTML = parseInt(id)
-                } 
-            } 
-        }      
-function toggleBox(id, content) {
-    // Step 1: Close all open boxes
-    const allBoxes = document.querySelectorAll('.boxes'); // Select all boxes
+            function clicking(id, content) {
+    const elem = document.getElementById(id);
+    const today = new Date();
+    const future = new Date(year, 11, parseInt(id), 00, 01, 01);
+
+    // Close all open boxes
+    const allBoxes = document.querySelectorAll('.boxes');
     allBoxes.forEach(box => {
-        box.classList.remove('open'); // Remove the "open" class from all boxes
+        box.classList.remove('open');
         box.innerHTML = box.id; // Reset content to show the box's number
     });
 
-    // Step 2: Open the clicked box (if it wasn't already open)
-    const clickedBox = document.getElementById(id); // Get the clicked box by ID
-    if (!clickedBox.classList.contains('open')) { // Check if it's not already open
-        clickedBox.classList.add('open'); // Add the "open" class to the clicked box
-        clickedBox.innerHTML = content; // Change the content to the passed-in content
+    // Check if the box can be opened (date logic)
+    if (future < today) {
+        if (!elem.classList.contains('open')) {
+            elem.classList.add('open'); // Open the clicked box
+            if (elem.innerHTML == parseInt(id)) {
+                setSeen(parseInt(id)); // Mark as seen
+                elem.innerHTML = content; // Show the content
+            } else if (elem.innerHTML == ":)") {
+                elem.innerHTML = content;
+            } else {
+                elem.innerHTML = ":)";
+            }
+            elem.scrollIntoView(); // Scroll to the opened box
+        }
+    } else {
+        // Handle boxes that are not ready to be opened
+        if (elem.innerHTML == parseInt(id)) {
+            elem.innerHTML = "<p style='color: black; font-size: 15px;'>The time has not come yet!</p>";
+            elem.scrollIntoView();
+        } else {
+            elem.innerHTML = parseInt(id); // Reset to original number
+        }
     }
 }
+
     </script>
 </body>
 </html>
