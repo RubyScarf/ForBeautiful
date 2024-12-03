@@ -153,50 +153,58 @@
             localStorage.setItem("alreadySeen", seen.join(","));
         }       
 
+        // Initialize boxes on page load
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("Initializing boxes...");
+            document.querySelectorAll('.boxes').forEach(box => {
+                box.innerHTML = box.id; // Reset box content to its ID
+            });
+        });
+
         function clicking(id, content) {
-    console.log(`Clicked ID: ${id}, Content: ${content}`); // Debugging
-
-    const elem = document.getElementById(id);
-    if (!elem) {
-        console.error(`Element with ID ${id} not found!`);
-        return;
-    }
-
-    const today = new Date();
-    const future = new Date(year, 11, parseInt(id), 00, 01, 01);
-    console.log(`Today: ${today}, Future: ${future}`); // Debugging
-
-    // Close all open boxes
-    const allBoxes = document.querySelectorAll('.boxes');
-    allBoxes.forEach(box => {
-        box.classList.remove('open');
-        box.innerHTML = box.id; // Reset to the box's number
-    });
-
-    if (future < today) {
-        console.log(`Box ${id} is ready to open.`);
-        if (!elem.classList.contains('open')) {
-            elem.classList.add('open');
-            if (elem.innerHTML == parseInt(id)) {
-                setSeen(parseInt(id));
-                elem.innerHTML = content;
-            } else if (elem.innerHTML == ":)") {
-                elem.innerHTML = content;
-            } else {
-                elem.innerHTML = ":)";
+            console.log(`Clicked ID: ${id}, Content: ${content}`); // Debugging
+        
+            const elem = document.getElementById(id);
+            if (!elem) {
+                console.error(`Element with ID ${id} not found!`);
+                return;
             }
-            elem.scrollIntoView();
+        
+            const today = new Date();
+            const future = new Date(year, 11, parseInt(id), 00, 01, 01);
+            console.log(`Today: ${today}, Future: ${future}`); // Debugging
+        
+            // Close all open boxes
+            const allBoxes = document.querySelectorAll('.boxes');
+            allBoxes.forEach(box => {
+                box.classList.remove('open');
+                box.innerHTML = box.id; // Reset to the box's number
+            });
+        
+            if (future < today) {
+                console.log(`Box ${id} is ready to open.`);
+                if (!elem.classList.contains('open')) {
+                    elem.classList.add('open');
+                    if (elem.innerHTML == parseInt(id)) {
+                        setSeen(parseInt(id));
+                        elem.innerHTML = content;
+                    } else if (elem.innerHTML == ":)") {
+                        elem.innerHTML = content;
+                    } else {
+                        elem.innerHTML = ":)";
+                    }
+                    elem.scrollIntoView();
+                }
+            } else {
+                console.log(`Box ${id} is not ready to open.`);
+                if (elem.innerHTML == parseInt(id)) {
+                    elem.innerHTML = "<p style='color: black; font-size: 15px;'>The time has not come yet!</p>";
+                    elem.scrollIntoView();
+                } else {
+                    elem.innerHTML = parseInt(id);
+                }
+            }
         }
-    } else {
-        console.log(`Box ${id} is not ready to open.`);
-        if (elem.innerHTML == parseInt(id)) {
-            elem.innerHTML = "<p style='color: black; font-size: 15px;'>The time has not come yet!</p>";
-            elem.scrollIntoView();
-        } else {
-            elem.innerHTML = parseInt(id);
-        }
-    }
-}
 
 
     </script>
