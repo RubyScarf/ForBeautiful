@@ -36,15 +36,15 @@
             border-radius: 25px;
         }
 
-.boxes.open {
-    height: 300px;
-    width: 300px;
-    font: 25px cursive;
-    text-shadow: none;
-    color: rgba(35, 24, 71, 1);
-    padding: 20px;
-    background-color: rgba(159, 186, 222, 0.815);
-}
+        .boxes.open {
+            height: 300px;
+            width: 300px;
+            font: 25px cursive;
+            text-shadow: none;
+            color: rgba(35, 24, 71, 1);
+            padding: 20px;
+            background-color: rgba(159, 186, 222, 0.815);
+        }
         .red {
             background-color: rgba(88, 0, 150, 0.2);
             border: 3px solid rgba(0, 30, 161, 0.3);
@@ -145,67 +145,87 @@
         const content24 = "On the 24th day of Christmas a robot gave to me... " + '<br><a href="https://rubyscarf.github.io/SirMorado/pages/xmasday.html"></a>' /* xmas celebration */;
         const content25 = "On the 25th day of Christmas a robot gave to me... " /* NOPE */
 
-        function setSeen(id) {
-            const seen = getSeen();
-            if(seen.indexOf(id) == -1) {
-                seen.push(id);
-            }     
-            localStorage.setItem("alreadySeen", seen.join(","));
-        }       
+        // Get the already seen boxes from localStorage
+function getSeen() {
+    return localStorage.getItem("alreadySeen")
+        ? localStorage.getItem("alreadySeen").split(",").map(Number)
+        : [];
+}
 
-        // Initialize boxes on page load
-        document.addEventListener("DOMContentLoaded", () => {
-            console.log("Initializing boxes...");
-            document.querySelectorAll('.boxes').forEach(box => {
-                box.innerHTML = box.id; // Reset box content to its ID
-            });
-        });
+// Save an opened box ID to localStorage
+function setSeen(id) {
+    const seen = getSeen();
+    if (!seen.includes(id)) {
+        seen.push(id);
+    }
+    localStorage.setItem("alreadySeen", seen.join(","));
+}
 
-        function clicking(id, content) {
-            console.log(`Clicked ID: ${id}, Content: ${content}`); // Debugging
-        
-            const elem = document.getElementById(id);
-            if (!elem) {
-                console.error(`Element with ID ${id} not found!`);
-                return;
-            }
-        
-            const today = new Date();
-            const future = new Date(year, 11, parseInt(id), 00, 01, 01);
-            console.log(`Today: ${today}, Future: ${future}`); // Debugging
-        
-            // Close all open boxes
-            const allBoxes = document.querySelectorAll('.boxes');
-            allBoxes.forEach(box => {
-                box.classList.remove('open');
-                box.innerHTML = box.id; // Reset to the box's number
-            });
-        
-            if (future < today) {
-                console.log(`Box ${id} is ready to open.`);
-                if (!elem.classList.contains('open')) {
-                    elem.classList.add('open');
-                    if (elem.innerHTML == parseInt(id)) {
-                        setSeen(parseInt(id));
-                        elem.innerHTML = content;
-                    } else if (elem.innerHTML == ":)") {
-                        elem.innerHTML = content;
-                    } else {
-                        elem.innerHTML = ":)";
-                    }
-                    elem.scrollIntoView();
-                }
-            } else {
-                console.log(`Box ${id} is not ready to open.`);
-                if (elem.innerHTML == parseInt(id)) {
-                    elem.innerHTML = "<p style='color: black; font-size: 15px;'>The time has not come yet!</p>";
-                    elem.scrollIntoView();
-                } else {
-                    elem.innerHTML = parseInt(id);
-                }
-            }
+// Initialize boxes on page load
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("Initializing boxes...");
+    const seen = getSeen();
+    document.querySelectorAll(".box").forEach((box) => {
+        box.innerHTML = box.id; // Reset box content to its ID
+        if (seen.includes(parseInt(box.id))) {
+            box.classList.add("open");
+            box.innerHTML = `🎉 Already Opened!`;
         }
+    });
+});
 
+// Function to handle clicking on a box
+function clicking(id, content) {
+    console.log(`Clicked ID: ${id}, Content: ${content}`); // Debugging
+
+    const elem = document.getElementById(id);
+    if (!elem) {
+        console.error(`Element with ID ${id} not found!`);
+        return;
+    }
+
+    const today = new Date();
+    const year = today.getFullYear();
+    const future = new Date(year, 11, parseInt(id), 0, 1, 1); // December is month 11 (0-based)
+
+    console.log(`Today: ${today}, Future: ${future}`); // Debugging
+
+    // Close all open boxes
+    document.querySelectorAll(".box").forEach((box) => {
+        box.classList.remove("open");
+        box.innerHTML = box.id; // Reset to the box's number
+    });
+
+    if (future < today) {
+        console.log(`Box ${id} is ready to open.`);
+        if (!elem.classList.contains("open")) {
+            elem.classList.add("open");
+            if (elem.innerHTML === id) {
+                setSeen(parseInt(id));
+                elem.innerHTML = content;
+            } else if (elem.innerHTML === ":)") {
+                elem.innerHTML = content;
+            } else {
+                elem.innerHTML = ":)";
+            }
+            elem.scrollIntoView();
+        }
+    } else {
+        console.log(`Box ${id} is not ready to open.`);
+        if (elem.innerHTML === id) {
+            elem.innerHTML = "<p style='color: black; font-size: 15px;'>The time has not come yet!</p>";
+            elem.scrollIntoView();
+        } else {
+            elem.innerHTML = id;
+        }
+    }
+}
+
+// Function to reset the calendar
+function resetCalendar() {
+    localStorage.removeItem("alreadySeen");
+    window.location.reload();
+}
 
     </script>
 </body>
