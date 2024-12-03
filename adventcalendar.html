@@ -174,34 +174,33 @@
             const future = new Date(year, 11, parseInt(id), 00, 01, 01);
             console.log(`Today: ${today}, Future: ${future}`); // Debugging
         
-            // Close all open boxes
+            // Close all boxes
             const allBoxes = document.querySelectorAll('.boxes');
             allBoxes.forEach(box => {
-                // Reset the content to the box's original ID and remove 'open' class
                 if (box.classList.contains('open')) {
                     box.classList.remove('open');
-                    box.innerHTML = box.id; // Reset to the box's number
+                    box.innerHTML = box.id; // Reset to the box's original number
                 }
             });
         
-            // Open the clicked box if it is ready
+            // Check if the box can open
             if (future < today) {
                 console.log(`Box ${id} is ready to open.`);
                 if (!elem.classList.contains('open')) {
-                    elem.classList.add('open'); // Add the 'open' class
+                    elem.classList.add('open'); // Open the box by adding the 'open' class
                     if (elem.innerHTML == parseInt(id)) {
                         setSeen(parseInt(id));
-                        elem.innerHTML = content; // Add the content if it's empty
+                        elem.innerHTML = content; // Add the content
                     } else if (elem.innerHTML == ":)") {
-                        elem.innerHTML = content; // If it already has a ":)", replace it with content
+                        elem.innerHTML = content; // Replace ":)" with content
                     } else {
-                        elem.innerHTML = ":)"; // If there's some other content, default to ":)"
+                        elem.innerHTML = ":)"; // Default content when no content is set
                     }
                     elem.scrollIntoView();
                 } else {
-                    // If box is already open, close it (reset it to the original content)
+                    // If the box is already open, reset it
                     elem.classList.remove('open');
-                    elem.innerHTML = elem.id; // Reset to the box's number
+                    elem.innerHTML = elem.id; // Reset to the original number
                 }
             } else {
                 console.log(`Box ${id} is not ready to open.`);
@@ -213,6 +212,7 @@
                 }
             }
         }
+
 
     </script>
 </body>
