@@ -161,7 +161,7 @@
             });
         });
 
-        function clicking(id, content) {
+       function clicking(id, content) {
             console.log(`Clicked ID: ${id}, Content: ${content}`); // Debugging
         
             const elem = document.getElementById(id);
@@ -177,23 +177,31 @@
             // Close all open boxes
             const allBoxes = document.querySelectorAll('.boxes');
             allBoxes.forEach(box => {
-                box.classList.remove('open');
-                box.innerHTML = box.id; // Reset to the box's number
+                // Reset the content to the box's original ID and remove 'open' class
+                if (box.classList.contains('open')) {
+                    box.classList.remove('open');
+                    box.innerHTML = box.id; // Reset to the box's number
+                }
             });
         
+            // Open the clicked box if it is ready
             if (future < today) {
                 console.log(`Box ${id} is ready to open.`);
                 if (!elem.classList.contains('open')) {
-                    elem.classList.add('open');
+                    elem.classList.add('open'); // Add the 'open' class
                     if (elem.innerHTML == parseInt(id)) {
                         setSeen(parseInt(id));
-                        elem.innerHTML = content;
+                        elem.innerHTML = content; // Add the content if it's empty
                     } else if (elem.innerHTML == ":)") {
-                        elem.innerHTML = content;
+                        elem.innerHTML = content; // If it already has a ":)", replace it with content
                     } else {
-                        elem.innerHTML = ":)";
+                        elem.innerHTML = ":)"; // If there's some other content, default to ":)"
                     }
                     elem.scrollIntoView();
+                } else {
+                    // If box is already open, close it (reset it to the original content)
+                    elem.classList.remove('open');
+                    elem.innerHTML = elem.id; // Reset to the box's number
                 }
             } else {
                 console.log(`Box ${id} is not ready to open.`);
@@ -205,7 +213,6 @@
                 }
             }
         }
-
 
     </script>
 </body>
