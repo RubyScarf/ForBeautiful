@@ -1,5 +1,3 @@
-animationTimeline();
-
 // animation timeline
 const animationTimeline = () => {
     // split chars that needs to be animated individually
@@ -251,3 +249,5 @@ const animationTimeline = () => {
         tl.restart();
     });
 }
+
+animationTimeline();
