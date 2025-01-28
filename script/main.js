@@ -73,6 +73,9 @@ const animationTimeline = () => {
         scale: 0.2,
         opacity: 0,
     })
+    // Animates each span with a duration of 2 seconds, 
+    // staggering them by 0.08 seconds (starting each one 
+    // 0.05 seconds after the previous one).
     .staggerTo(
         ".hbd-chatbox span",
         2, {
