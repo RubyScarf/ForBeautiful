@@ -1,4 +1,4 @@
-animationTimeline()
+animationTimeline();
 
 // animation timeline
 const animationTimeline = () => {
