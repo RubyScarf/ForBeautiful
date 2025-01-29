@@ -205,9 +205,10 @@ body {
 .the-link {
   color: #0000FF;
   font-weight: bold;
-  font-size: 3em;
+  font-size: 0.8em;
+  opacity: .8;
   margin: 0;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 
 .the-link h4 {
