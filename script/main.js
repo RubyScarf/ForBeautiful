@@ -255,6 +255,12 @@ const animationTimeline = () => {
     replyBtn.addEventListener("click", () => {
         tl.restart();
     });
+    
+    const myBtn = document.getElementById("giftbox");
+    myBtn.addEventListener("click", () => {
+        window.location.href = "special.html"; // Redirects to the desired link
+});
+
 }
 
 animationTimeline();
