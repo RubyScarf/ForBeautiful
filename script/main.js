@@ -69,10 +69,31 @@ const animationTimeline = () => {
             y: 10
         },
     "+=3")
+// um 
+.to(".three",
+        0.7,
+        {
+            opacity: 0,
+            y: 10
+        },
+    "-=1")
+    // Animates .two to fade out and move downward (y: 10). Starts 1 seconds before the previous animation ends (indicated by "-=1").
     .from(".four", 0.7, {
-        scale: 0.2,
         opacity: 0,
+        y: 10
     })
+    .to(".four",
+        0.7,
+        {
+            opacity: 0,
+            y: 10
+        },
+    "+=3")
+// um
+//    .from(".four", 0.7, {
+//        scale: 0.2,
+//        opacity: 0,
+//    })
     .from(".fake-btn", 0.3, {
         scale: 0.2,
         opacity: 0,
