@@ -35,25 +35,29 @@ const animationTimeline = () => {
     .from(".one", 0.7, {
         opacity: 0,
         y: 10
+    // Animates .one to fade in (opacity: 1) and move upward (from y: 10 to y: 0). Takes 0.7 seconds to complete.
     })
     .from(".two", 0.4, {
         opacity: 0,
         y: 10
+    // Animates .two similarly to .one, but with a shorter duration of 0.4 seconds.
     })
     .to(".one",
         0.7,
         {
             opacity: 0,
             y: 10
+    // Animates .one to fade out (opacity: 0) and move downward (y: 10). Starts 2.5 seconds after the previous animation. Takes 0.7 seconds to complete.
         },
-    "+=3.5")
+    "+=2.5")
     .to(".two",
         0.7,
         {
             opacity: 0,
             y: 10
         },
-    "-=2")
+    "-=1")
+    // Animates .two to fade out and move downward (y: 10). Starts 1 seconds before the previous animation ends (indicated by "-=1").
     .from(".three", 0.7, {
         opacity: 0,
         y: 10
