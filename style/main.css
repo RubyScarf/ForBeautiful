@@ -7,17 +7,6 @@ body {
   margin: 0;
 }
 
-/* Initially hide the spans */
-.hbd-chatbox span {
-    visibility: hidden;
-}
-
-/* The spans will be shown during the animation */
-.hbd-chatbox span.visible {
-    visibility: visible;
-}
-
-
 .container {
   height: 100vh;
   margin: 0 auto;
