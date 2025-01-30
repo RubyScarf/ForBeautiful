@@ -110,14 +110,14 @@ const animationTimeline = () => {
 //    )
 //    .to(".fake-btn", 0.1, {
 //        backgroundColor: "rgb(127, 206, 248)",
-    },
-    "+=1")
-    .to(
-        ".four",
-        0.5, {
-            scale: 0.2,
-            opacity: 0,
-            y: -150
+//    },
+//    "+=1")
+//    .to(
+//        ".four",
+//        0.5, {
+//            scale: 0.2,
+//            opacity: 0,
+//            y: -150
         },
     "+=1")
     .from(".idea-1", 0.7, ideaTextTrans)
