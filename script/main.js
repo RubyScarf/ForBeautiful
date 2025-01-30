@@ -40,12 +40,7 @@ const animationTimeline = () => {
         .to(".two", 0.7, { opacity: 0, y: 10 }, "-=1")
         .from(".three", 0.7, { opacity: 0, y: 10 })
         .to(".three", 0.7, { opacity: 0, y: 10 }, "+=3")
-        .from(".four", 0.01, { opacity: 0, y: 10 })
-        .to(".four", 0.01, { opacity: 0, y: 10 }, "+=3")
-        .from(".fake-btn", 0.1, { scale: 0.2, opacity: 0 })
-        .staggerTo(".hbd-chatbox span", 0.01, { visibility: "visible" }, 0.1)
-        .to(".fake-btn", 0.01, { backgroundColor: "rgb(127, 206, 248)" }, "-=3")
-        .to(".four", 0.05, { scale: 0.2, opacity: 0, y: -150 }, "-=3")
+        
         .from(".idea-0", 0.7, ideaTextTrans)
         .to(".idea-0", 0.7, ideaTextTransLeave, "+=2.5")
         .from(".idea-1", 0.7, ideaTextTrans)
