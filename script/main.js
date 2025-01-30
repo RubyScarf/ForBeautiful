@@ -88,7 +88,7 @@ const animationTimeline = () => {
             opacity: 0,
             y: 10
         },
-    "+=3")
+    "+=1")
 // um
 //    .from(".four", 0.7, {
 //        scale: 0.2,
@@ -103,7 +103,7 @@ const animationTimeline = () => {
     // 0.05 seconds after the previous one).
     .staggerTo(
         ".hbd-chatbox span",
-        2, {
+        .01, {
             visibility: "visible",
         },
         0.06
