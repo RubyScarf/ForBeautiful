@@ -77,28 +77,8 @@ const animationTimeline = () => {
         },
     "-=1")
     // Animates .two to fade out and move downward (y: 10). Starts 1 seconds before the previous animation ends (indicated by "-=1").
-    .from(".four", 0.7, {
-        opacity: 0,
-        y: 10
-    })
-    .to(".four",
-        0.7,
-        {
-            opacity: 0,
-            y: 10
-        },
-    "+=3")
-    .to(".four",
-        0.7,
-        {
-            opacity: 0,
-            y: 10
-        },
-    "-=1")
-    .from(".five", 0.4, {
-        opacity: 0,
-        y: 10
-    }
+    .from(".idea-0", 0.7, ideaTextTrans)
+    .to(".idea-0", 0.7, ideaTextTransLeave, "+=2.5")
     .from(".idea-1", 0.7, ideaTextTrans)
     .to(".idea-1", 0.7, ideaTextTransLeave, "+=2.5")
     .from(".idea-2", 0.7, ideaTextTrans)
