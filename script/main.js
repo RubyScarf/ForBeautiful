@@ -70,15 +70,15 @@ const animationTimeline = () => {
             y: 10
         },
     "+=3")
-// um 
-.to(".three",
-        0.7,
+    // um 
+    .to(".three",
+            0.7,
         {
             opacity: 0,
             y: 10
         },
     "-=1")
-    // Animates .two to fade out and move downward (y: 10). Starts 1 seconds before the previous animation ends (indicated by "-=1").
+    
     .from(".four", 0.7, {
         opacity: 0,
         y: 10
@@ -90,29 +90,11 @@ const animationTimeline = () => {
             y: 10
         },
     "+=3")
-// um
-//    .from(".four", 0.7, {
-//        scale: 0.2,
-//        opacity: 0,
-//    })
-    .from(".fake-btn", 0.3, {
-        scale: 0.2,
+        
+    .from(".four", 0.7, {
         opacity: 0,
+        y: 10
     })
-    // Animates each span with a duration of 2 seconds, 
-    // staggering them by 0.08 seconds (starting each one 
-    // 0.05 seconds after the previous one).
-    .staggerTo(
-        ".hbd-chatbox span",
-        2, {
-            visibility: "visible",
-        },
-        0.06
-    )
-    .to(".fake-btn", 0.1, {
-        backgroundColor: "rgb(127, 206, 248)",
-    },
-    "+=1")
     .to(
         ".four",
         0.5, {
