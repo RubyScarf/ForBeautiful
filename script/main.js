@@ -1,3 +1,4 @@
+
 // animation timeline
 const animationTimeline = () => {
     // split chars that needs to be animated individually
@@ -94,16 +95,16 @@ const animationTimeline = () => {
 //        scale: 0.2,
 //        opacity: 0,
 //    })
-//    .from(".fake-btn", 0.3, {
-//        scale: 0.2,
-//        opacity: 0,
-//    })
+    .from(".fake-btn", 0.3, {
+        scale: 0.2,
+        opacity: 0,
+    })
     // Animates each span with a duration of 2 seconds, 
     // staggering them by 0.08 seconds (starting each one 
     // 0.05 seconds after the previous one).
     .staggerTo(
         ".hbd-chatbox span",
-            2, {
+        2, {
             visibility: "visible",
         },
         0.06
