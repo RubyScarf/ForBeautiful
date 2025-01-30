@@ -119,7 +119,7 @@ const animationTimeline = () => {
             repeatDelay: 1.4,
         }, 0.3)
         .to(".six", 0.5, { opacity: 0, y: 30, zIndex: "-1" })
-        .staggerFrom(".nine p", 3.1, ideaTextTrans, 1.2)
+        .staggerFrom(".nine p", 3.1, ideaTextTrans, 3.2)
         .to(".last-smile", 0.5, { rotation: 90 }, "+=1");
 
     // Restart animation on button click
