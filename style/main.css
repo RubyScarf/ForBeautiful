@@ -37,6 +37,10 @@ body {
   font-size: 3rem;
 }
 
+.four {
+  font-size: 2.5rem;
+}
+
 .four .text-box {
   border: 3px solid #aaa;
   border-radius: 5px;
