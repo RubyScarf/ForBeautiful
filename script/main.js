@@ -88,7 +88,7 @@ const animationTimeline = () => {
             opacity: 0,
             y: 10
         },
-//    "+=3")
+    "+=3")
 // um
 //    .from(".four", 0.7, {
 //        scale: 0.2,
@@ -101,23 +101,23 @@ const animationTimeline = () => {
     // Animates each span with a duration of 2 seconds, 
     // staggering them by 0.08 seconds (starting each one 
     // 0.05 seconds after the previous one).
-//    .staggerTo(
-//        ".hbd-chatbox span",
-//        2, {
-//            visibility: "visible",
-//        },
-//        0.06
-//    )
-//    .to(".fake-btn", 0.1, {
-//        backgroundColor: "rgb(127, 206, 248)",
-//    },
-//    "+=1")
-//    .to(
-//        ".four",
-//        0.5, {
-//            scale: 0.2,
-//            opacity: 0,
-//            y: -150
+    .staggerTo(
+        ".hbd-chatbox span",
+            2, {
+            visibility: "visible",
+        },
+        0.06
+    )
+    .to(".fake-btn", 0.1, {
+        backgroundColor: "rgb(127, 206, 248)",
+    },
+    "+=1")
+    .to(
+        ".four",
+        0.5, {
+            scale: 0.2,
+            opacity: 0,
+            y: -150
         },
     "+=1")
     .from(".idea-1", 0.7, ideaTextTrans)
