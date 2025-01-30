@@ -69,35 +69,15 @@ const animationTimeline = () => {
             y: 10
         },
     "+=3")
-// um 
-.to(".three",
-        0.7,
-        {
-            opacity: 0,
-            y: 10
-        },
-    "-=1")
+    
+    .to(".three", 0.7, { opacity: 0, y: 10 }, "-=1")
     // Animates .two to fade out and move downward (y: 10). Starts 1 seconds before the previous animation ends (indicated by "-=1").
-    .from(".four", 0.7, {
-        opacity: 0,
-        y: 10
-    })
-    .to(".four",
-        0.7,
-        {
-            opacity: 0,
-            y: 10
-        },
-    "+=0.01")
-// um
-//    .from(".four", 0.7, {
-//        scale: 0.2,
-//        opacity: 0,
-//    })
-    .from(".fake-btn", 0.3, {
-        scale: 0.2,
-        opacity: 0,
-    })
+    // fade in, .four element to:Fade in from being invisible (opacity: 0).Slide upward from y: 10.Takes 0.7 seconds.
+    .from(".four", 0.7, { opacity: 0, y: 10 })
+    // fade out, takes 0.7s 
+    .to(".four", 0.7, { opacity: 0, y: 10 }, "+=0.01")
+    // fake button in
+    .from(".fake-btn", 0.01, { scale: 0.2, opacity: 0 })
     // Animates each span with a duration of 2 seconds, 
     // staggering them by 0.05 seconds (starting each one 
     // 0.05 seconds after the previous one).
@@ -111,15 +91,11 @@ const animationTimeline = () => {
     .to(".fake-btn", 0.1, {
         backgroundColor: "rgb(127, 206, 248)",
     },
+    "-=2")
+    // Shrink to 20% of its size (scale: 0.2).Fade out (opacity: 0).Move upward (y: -150).Takes 0.5 seconds.
+    .to(".four", 0.05, { scale: 0.2, opacity: 0, y: -150 })
+    
     "+=1")
-    .to(
-        ".four",
-        0.5, {
-            scale: 0.2,
-            opacity: 0,
-            y: -150
-        },
-    "+=0.01")
     .from(".idea-1", 0.7, ideaTextTrans)
     .to(".idea-1", 0.7, ideaTextTransLeave, "+=2.5")
     .from(".idea-2", 0.7, ideaTextTrans)
