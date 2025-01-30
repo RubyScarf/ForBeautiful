@@ -68,9 +68,8 @@ const animationTimeline = () => {
             opacity: 0,
             y: 10
         },
-    "+=3")
-// um 
-.to(".three",
+    "+=3") 
+    .to(".three",
         0.7,
         {
             opacity: 0,
@@ -88,12 +87,8 @@ const animationTimeline = () => {
             opacity: 0,
             y: 10
         },
-    "+=2")
-// um
-//    .from(".four", 0.7, {
-//        scale: 0.2,
-//        opacity: 0,
-//    })
+    "+=3")
+
     .from(".fake-btn", 0.3, {
         scale: 0.2,
         opacity: 0,
@@ -106,12 +101,12 @@ const animationTimeline = () => {
         1, {    
             visibility: "visible",
         },
-        0.01
+        1
     )
     .to(".fake-btn", 0.1, {
         backgroundColor: "rgb(127, 206, 248)",
     },
-    "-=2")
+    "-=3)
     .to(
         ".four",
         0.5, {
@@ -119,7 +114,7 @@ const animationTimeline = () => {
             opacity: 0,
             y: -150
         },
-    "-=2")
+    "-=3")
     .from(".idea-1", 0.7, ideaTextTrans)
     .to(".idea-1", 0.7, ideaTextTransLeave, "+=2.5")
     .from(".idea-2", 0.7, ideaTextTrans)
