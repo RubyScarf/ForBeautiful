@@ -88,33 +88,17 @@ const animationTimeline = () => {
             y: 10
         },
     "+=3")
-
-    .from(".fake-btn", 0.3, {
-        scale: 0.2,
-        opacity: 0,
-    })
-    // Animates each span with a duration of 2 seconds, 
-    // staggering them by 0.05 seconds (starting each one 
-    // 0.05 seconds after the previous one).
-    .staggerTo(
-        ".hbd-chatbox span",
-        1, {    
-            visibility: "visible",
-        },
-        1
-    )
-    .to(".fake-btn", 0.1, {
-        backgroundColor: "rgb(127, 206, 248)",
-    },
-    "-=3)
-    .to(
-        ".four",
-        0.5, {
-            scale: 0.2,
+    .to(".four",
+        0.7,
+        {
             opacity: 0,
-            y: -150
+            y: 10
         },
-    "-=3")
+    "-=1")
+    .from(".five", 0.4, {
+        opacity: 0,
+        y: 10
+    }
     .from(".idea-1", 0.7, ideaTextTrans)
     .to(".idea-1", 0.7, ideaTextTransLeave, "+=2.5")
     .from(".idea-2", 0.7, ideaTextTrans)
@@ -207,7 +191,7 @@ const animationTimeline = () => {
         opacity: 0,
     })
     .staggerFrom(
-        ".wish-hbd span",
+        ".wish- span",
         0.7, {
             opacity: 0,
             y: -50,
@@ -219,7 +203,7 @@ const animationTimeline = () => {
         0.1
     )
     .staggerFromTo(
-        ".wish-hbd span",
+        ".wish- span",
         0.7, {
             scale: 1.4,
             rotationY: 150,
