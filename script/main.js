@@ -4,13 +4,23 @@ const animationTimeline = () => {
     const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
     const hbd = document.getElementsByClassName("wish-hbd")[0];
 
-    textBoxChars.innerHTML = `<span>${textBoxChars.innerHTML
-        .split("")
-        .join("</span><span>")}</span>`;
+    // Remove the text box
+    if (textBox) {
+        textBox.remove();
+    }
 
-    hbd.innerHTML = `<span>${hbd.innerHTML
-        .split("")
-        .join("</span><span>")}</span>`;
+    // Add the audio element
+    const audioElement = document.createElement("audio");
+    audioElement.id = "birthday-audio";
+    audioElement.controls = true;
+    const sourceElement = document.createElement("source");
+    sourceElement.src = "your-audio-file.mp3"; // Replace with your audio file URL
+    sourceElement.type = "audio/mpeg";
+    audioElement.appendChild(sourceElement);
+    audioElement.innerHTML = "Your browser does not support the audio element."; // Fallback message
+
+    // Append the audio element to .four
+    fourDiv.appendChild(audioElement);
 
     const ideaTextTrans = {
         opacity: 0,
@@ -30,77 +40,51 @@ const animationTimeline = () => {
     const tl = new TimelineMax();
 
     tl.to(".container", 0.6, {
-        visibility: "visible"
+        visibility: "visible",
     })
-    .from(".one", 0.7, {
-        opacity: 0,
-        y: 10
-    // Animates .one to fade in (opacity: 1) and move upward (from y: 10 to y: 0). Takes 0.7 seconds to complete.
-    })
-    .from(".two", 0.4, {
-        opacity: 0,
-        y: 10
-    // Animates .two similarly to .one, but with a shorter duration of 0.4 seconds.
-    })
-    .to(".one",
-        0.7,
-        {
+        .from(".one", 0.7, {
             opacity: 0,
-            y: 10
-    // Animates .one to fade out (opacity: 0) and move downward (y: 10). Starts 2.5 seconds after the previous animation. Takes 0.7 seconds to complete.
-        },
-    "+=2.5")
-    .to(".two",
-        0.7,
-        {
+            y: 10,
+        })
+        .from(".two", 0.4, {
             opacity: 0,
-            y: 10
-        },
-    "-=1")
-    // Animates .two to fade out and move downward (y: 10). Starts 1 seconds before the previous animation ends (indicated by "-=1").
-    .from(".three", 0.7, {
-        opacity: 0,
-        y: 10
-    })
-    .to(".three",
-        0.7,
-        {
+            y: 10,
+        })
+        .to(".one", 0.7, {
             opacity: 0,
-            y: 10
-        },
-    "+=3")
-    // um 
-    .to(".three",
-            0.7,
-        {
+            y: 10,
+        }, "+=2.5")
+        .to(".two", 0.7, {
             opacity: 0,
-            y: 10
-        },
-    "-=1")
-    
-    .from(".four", 0.7, {
-        opacity: 0,
-        y: 10
-    })
-    .to(".four",
-        0.7,
-        {
+            y: 10,
+        }, "-=1")
+        .from(".three", 0.7, {
             opacity: 0,
-            y: 10
-        },
-    "+=3")
-        
-    .from(".four", 0.7, {
-        opacity: 0,
-        y: 10
-    })
-    .to(
-        ".four",
-        0.5, {
+            y: 10,
+        })
+        .to(".three", 0.7, {
+            opacity: 0,
+            y: 10,
+        }, "+=3")
+        .from(".four", 0.7, {
+            opacity: 0,
+            y: 10,
+        })
+        .to(".four", 0.7, {
+            opacity: 0,
+            y: 10,
+        }, "+=3")
+        .to(".four", 0.5, {
             scale: 0.2,
             opacity: 0,
-            y: -150
-        },
+            y: -150,
+        }, "+=1")
+        .from(".idea-1", 0.7, {
+            opacity: 0,
+            y: -20,
+            rotationX: 5,
+            skewX: "15deg",
+        });
     "+=1")
     .from(".idea-1", 0.7, ideaTextTrans)
     .to(".idea-1", 0.7, ideaTextTransLeave, "+=2.5")
