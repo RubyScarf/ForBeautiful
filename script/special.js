@@ -1,3 +1,4 @@
+
 const animationTimeline = () => {
     // Initialize GSAP timeline
     const tl = gsap.timeline();
@@ -20,8 +21,9 @@ const animationTimeline = () => {
 
     const ideaTextTrans = {
         opacity: 0,
-        y: 20,
-        ease: "power2.out"
+        y: -20,
+        rotationX: 5,
+        skewX: "15deg"
     };
 
     const ideaTextTransLeave = {
