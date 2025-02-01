@@ -42,5 +42,19 @@ const animationTimeline = () => {
         .from(".PS", 0.7, ideaTextTrans)
         .to(".PS", 0.7, ideaTextTransLeave, "+=6")
         
+
+    // Restart animation on button click
+    const replyBtn = document.getElementById("replay");
+    replyBtn.addEventListener("click", () => {
+        tl.restart();
+    });
+
+    // Redirect on button click
+    const myBtn = document.getElementById("giftbox");
+    myBtn.addEventListener("click", () => {
+        window.location.href = "special.html";
+    });
+};
+
 // Start the animation
 animationTimeline();
