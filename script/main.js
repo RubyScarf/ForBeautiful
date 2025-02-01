@@ -38,7 +38,7 @@ const animationTimeline = () => {
         .from(".two", 0.4, { opacity: 0, y: 10 })
         .to(".one", 0.7, { opacity: 0, y: 10 }, "+=2.5")
         .to(".two", 0.7, { opacity: 0, y: 10 }, "-=1")
-        .from(".three", 0.7, { opacity: 0, y: 10 })
+        .from(".three", 1.7, { opacity: 0, y: 10 })
         .to(".three", 0.7, { opacity: 0, y: 10 }, "+=1")
         .from(".idea-0", 0.7, ideaTextTrans)
         .to(".idea-0", 0.7, ideaTextTransLeave, "+=1.0")
