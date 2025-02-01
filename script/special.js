@@ -6,6 +6,7 @@ const animationTimeline = () => {
     // Split chars that need to be animated individually
     const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
     const hbd = document.getElementsByClassName("wish-hbd")[0];
+    const audio = document.getElementById("audio-player");
 
     if (textBoxChars) {
         textBoxChars.innerHTML = `<span>${textBoxChars.innerHTML
@@ -37,23 +38,13 @@ const animationTimeline = () => {
     tl.to(".container", 0.6, { visibility: "visible" })
         .from(".when", 0.7, ideaTextTrans)
         .to(".when", 0.7, ideaTextTransLeave, "+=4")
-        .from(".words", 0.9, ideaTextTrans)
-        .to(".words", 0.9, ideaTextTransLeave, "+=14.5")
+        .add(() => {
+            audio.play(); 
+        }, "+=0")
         .from(".PS", 0.7, ideaTextTrans)
         .to(".PS", 0.7, ideaTextTransLeave, "+=6")
         
 
-    // Restart animation on button click
-    const replyBtn = document.getElementById("replay");
-    replyBtn.addEventListener("click", () => {
-        tl.restart();
-    });
-
-    // Redirect on button click
-    const myBtn = document.getElementById("giftbox");
-    myBtn.addEventListener("click", () => {
-        window.location.href = "special.html";
-    });
 };
 
 // Start the animation
