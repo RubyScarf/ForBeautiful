@@ -34,18 +34,12 @@ const animationTimeline = () => {
 
 // Timeline animations
     tl.to(".container", 0.6, { visibility: "visible" })
-        .from(".one", 0.7, { opacity: 0, y: 10 })
-        .from(".two", 0.4, { opacity: 0, y: 10 })
-        .to(".one", 0.7, { opacity: 0, y: 10 }, "+=3.5")
-        .to(".two", 0.7, { opacity: 0, y: 10 }, "-=1")
-        .from(".three", 0.7, { opacity: 0, y: 10 })
-        .to(".three", 0.7, { opacity: 0, y: 10 }, "+=2")
-        .from(".idea-0", 0.7, ideaTextTrans)
-        .to(".idea-0", 0.7, ideaTextTransLeave, "+=3")
-        .from(".idea-1", 0.7, ideaTextTrans)
-        .to(".idea-1", 0.7, ideaTextTransLeave, "+=4.5")
-        .from(".idea-2", 0.7, ideaTextTrans)
-        .to(".idea-2", 0.7, ideaTextTransLeave, "+=3.5")
+        .from(".when", 0.7, ideaTextTrans)
+        .to(".when", 0.7, ideaTextTransLeave, "+=3")
+        .from(".words", 0.7, ideaTextTrans)
+        .to(".words", 0.7, ideaTextTransLeave, "+=4.5")
+        .from(".PS", 0.7, ideaTextTrans)
+        .to(".PS", 0.7, ideaTextTransLeave, "+=3.5")
         .from(".idea-3", 0.7, ideaTextTrans)
         .to(".idea-3 strong", 0.5, {
             scale: 1.2,
