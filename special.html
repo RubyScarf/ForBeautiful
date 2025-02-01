@@ -53,6 +53,13 @@
       text-align: center;
     }
 
+    .when, .words, .PS {
+      position: relative;  /* Make sure all are positioned similarly */
+      top: 0;
+      margin: 0;
+      padding: 0;
+    }
+
     .back-button {
       position: fixed;
       bottom: 20px;
@@ -68,25 +75,13 @@
       transition: all 0.3s ease-in-out;
       opacity: 0.6;
     }
-    
-    .back-button:hover {
-      color: #000;
-      background-color: rgba(0, 0, 0, 0.1);
-      border-color: rgba(0, 0, 0, 0.2);
-      opacity: 1;
-      transform: scale(1.05);
-    }
-    
-    .back-button:active {
-      transform: scale(0.95);
-      opacity: 0.9;
-    }
 
   </style>
 </head>
 
 <body>
   <div class="container1">
+    <div class="">
       <p class="when">gosh, i made like 90% of this before the Christmas one</p>
       <p class="words">
         Happy birthday Rakuyama!! You are legally allowed to drink alcohol now! YIPPEE!!! I can’t express how grateful I am to have you in my life. 
@@ -97,6 +92,7 @@
         all your accomplishments, and who you are. Congrats on completing one more cycle around the sun! 
       </p>
       <p class="PS">I have nothing else to say besides I love you, I always have, and I always will. </p>
+    </div>
   </div>
 </body>
   
