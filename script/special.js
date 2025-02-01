@@ -36,11 +36,11 @@ const animationTimeline = () => {
 // Timeline animations
     tl.to(".container", 0.6, { visibility: "visible" })
         .from(".when", 0.7, ideaTextTrans)
-        .to(".when", 0.7, ideaTextTransLeave, "+=3")
+        .to(".when", 0.7, ideaTextTransLeave, "+=4")
         .from(".words", 0.7, ideaTextTrans)
-        .to(".words", 0.7, ideaTextTransLeave, "+=4.5")
+        .to(".words", 0.7, ideaTextTransLeave, "+=14.5")
         .from(".PS", 0.7, ideaTextTrans)
-        .to(".PS", 0.7, ideaTextTransLeave, "+=3.5")
+        .to(".PS", 0.7, ideaTextTransLeave, "+=4.5")
         
 
     // Restart animation on button click
