@@ -24,26 +24,19 @@ body {
   top: 20vh;
 }
 
-.container1 {
-  background: #ffffff; /* Clean white card */
-  padding: 2rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.container1 p {
+.container p {
   font-size: 1.1rem; /* Friendly, readable size */
   line-height: 1.6; /* Spacing for readability */
   margin-bottom: 1rem;
 }
 
-.container1 p:first-of-type{
+.container p:first-of-type{
   color: #8a7274;
   font-size: 0.9rem;
   text-align: center;
 }
 
-.container1 p:last-of-type {
+.container p:last-of-type {
   font-weight: bold; /* Highlight the heartfelt message */
   color: #0077b6; /* A friendly blue tone */
   text-align: center;
@@ -56,7 +49,6 @@ body {
   right: 0;
   font-family: 'Poppins', sans-serif;
 }
-
 
 .back-button {
   position: fixed;
