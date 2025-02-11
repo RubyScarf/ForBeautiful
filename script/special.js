@@ -1,4 +1,3 @@
-
 const animationTimeline = () => {
     // Initialize GSAP timeline
     const tl = gsap.timeline();
@@ -33,11 +32,18 @@ const animationTimeline = () => {
         skewX: "-15deg"
     };
 
-// Timeline animations
+    // Create audio element
+    const audio = new Audio(".music/Contigo.mp3");
+
+    // Timeline animations
     tl.to(".container", 0.6, { visibility: "visible" })
         .from(".when", 0.7, ideaTextTrans)
         .to(".when", 0.7, ideaTextTransLeave, "+=4")
-        .from(".words", 0.9, ideaTextTrans)
+        //.from(".words", 0.9, ideaTextTrans)
+        .from(".words", 0.9, {
+            ...ideaTextTrans,
+            onStart: () => audio.play() // Play audio when `.words` starts animating
+        })
         .to(".words", 0.9, ideaTextTransLeave, "+=14.5")
         .from(".PS", 0.7, ideaTextTrans)
         .to(".PS", 0.7, ideaTextTransLeave, "+=6")
@@ -58,3 +64,4 @@ const animationTimeline = () => {
 
 // Start the animation
 animationTimeline();
+
