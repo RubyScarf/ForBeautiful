@@ -33,7 +33,7 @@ const animationTimeline = () => {
     };
 
     // Create audio element
-    const audio = new Audio("./music/Contigo.mp3");
+    const audio = new Audio("../music/Contigo.mp3");
 
     // Timeline animations
     tl.to(".container", 0.6, { visibility: "visible" })
