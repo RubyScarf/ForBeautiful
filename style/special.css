@@ -5,13 +5,12 @@ html {
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
-  min-height: 100vh
 }
 
 .container {
-  min-height: 100vh;
+  height: 100vh;
   margin: 0 auto;
-  overflow: auto;
+  overflow: hidden;
   position: relative;
   text-align: center;
   visibility: visible;
@@ -22,13 +21,10 @@ body {
   left: 0;
   right: 0;
   top: 20vh;
-  position: relative;
 }
 
 .container p {
-  font-size: 1.1rem; /* Friendly, readable size */
-  line-height: 1.6; /* Spacing for readability */
-  margin-bottom: 1rem;
+  line-height: 1.2; /* Spacing for readability */
 }
 
 .container p:first-of-type{
@@ -41,22 +37,21 @@ body {
   font-weight: bold; /* Highlight the heartfelt message */
   color: #0077b6; /* A friendly blue tone */
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
 }
 
 .main p {
-  font-size: 2rem;
+  font-size: 1rem;
   left: 0;
   /* position: absolute; */
   right: 0;
   font-family: 'Poppins', sans-serif;
-  padding: .5rem
+  padding: 0.5rem
 }
 
 .text {
     width: 90vw;  /* Default for small screens (phones) */
     margin: 0 auto;
-    text-align: left; 
 }
 
 @media (min-width: 768px) {  /* Apply to tablets and larger screens */
