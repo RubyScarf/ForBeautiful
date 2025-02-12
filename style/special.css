@@ -55,7 +55,6 @@ body {
 .text {
     width: 90vw;  /* Default for small screens (phones) */
     margin: 0 auto;
-    text-align: justify;
 }
 
 @media (min-width: 768px) {  /* Apply to tablets and larger screens */
