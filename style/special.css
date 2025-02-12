@@ -53,7 +53,13 @@ body {
 }
 
 .text {
-    width: 75vw;  /* 3/4 of the viewport width */
-    margin: 0 auto;  /* Centers the element horizontally */
-    text-align: justify;  /* Makes the text look even */
+    width: 90vw;  /* Default for small screens (phones) */
+    margin: 0 auto;
+    text-align: justify;
+}
+
+@media (min-width: 768px) {  /* Apply to tablets and larger screens */
+    .text {
+        width: 75vw;  /* 3/4 of the screen width */
+    }
 }
