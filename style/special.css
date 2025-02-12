@@ -38,7 +38,7 @@ body {
   text-align: center;
 }
 
-.container p:last-of-type, .PS {
+.container p:last-of-type{
   font-weight: bold; /* Highlight the heartfelt message */
   color: #0077b6; /* A friendly blue tone */
   text-align: center;
