@@ -51,3 +51,9 @@ body {
   font-family: 'Poppins', sans-serif;
   padding: .5rem
 }
+
+.text {
+    width: 75vw;  /* 3/4 of the viewport width */
+    margin: 0 auto;  /* Centers the element horizontally */
+    text-align: justify;  /* Makes the text look even */
+}
