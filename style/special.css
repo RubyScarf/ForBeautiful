@@ -25,6 +25,11 @@ body {
 
 .container p {
   line-height: 1.2; /* Spacing for readability */
+  font-size: 1rem;
+  left: 0;
+  right: 0;
+  font-family: 'Poppins', sans-serif;
+  padding: 0.5rem
 }
 
 .container p:first-of-type{
@@ -38,15 +43,6 @@ body {
   color: #0077b6; /* A friendly blue tone */
   text-align: center;
   font-size: 0.8rem;
-}
-
-.main p {
-  font-size: 1rem;
-  left: 0;
-  /* position: absolute; */
-  right: 0;
-  font-family: 'Poppins', sans-serif;
-  padding: 0.5rem
 }
 
 .text {
