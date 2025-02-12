@@ -1,4 +1,3 @@
-
 const animationTimeline = () => {
     // Initialize GSAP timeline
     const tl = gsap.timeline();
@@ -37,10 +36,14 @@ const animationTimeline = () => {
     tl.to(".container", 0.6, { visibility: "visible" })
         .from(".when", 0.7, ideaTextTrans)
         .to(".when", 0.7, ideaTextTransLeave, "+=4")
+        .from(".part-0", 0.7, ideaTextTrans)
+        .to(".part-0", 0.7, ideaTextTransLeave, "+=3")
         .from(".part-1", 0.7, ideaTextTrans)
         .to(".part-1", 0.7, ideaTextTransLeave, "+=3")
         .from(".part-2", 0.7, ideaTextTrans)
         .to(".part-2", 0.7, ideaTextTransLeave, "+=3")
+        .from(".part-3", 0.7, ideaTextTrans)
+        .to(".part-3", 0.7, ideaTextTransLeave, "+=3")
         .from(".words", 0.9, ideaTextTrans)
         .to(".words", 0.9, ideaTextTransLeave, "+=14.5")
         .from(".PS", 0.7, ideaTextTrans)
