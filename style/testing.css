@@ -30,11 +30,11 @@ body {
   margin-bottom: 1rem;
 }
 
-.container p:first-of-type{
+/* .container p:first-of-type{
   color: #8a7274;
   font-size: 0.9rem;
   text-align: center;
-}
+} */
 
 .container p:last-of-type {
   font-weight: bold; /* Highlight the heartfelt message */
