@@ -34,6 +34,8 @@ const animationTimeline = () => {
 
 // Timeline animations
     tl.to(".container", 0.6, { visibility: "visible" })
+        .from(".words", 0.9, ideaTextTrans)
+        .to(".words", 0.9, ideaTextTransLeave, "+=19.5")
         .from(".when", 0.7, ideaTextTrans)
         .to(".when", 0.7, ideaTextTransLeave, "+=4")
         .from(".part-0", 0.7, ideaTextTrans)
@@ -44,8 +46,6 @@ const animationTimeline = () => {
         .to(".part-2", 0.7, ideaTextTransLeave, "+=3.5")
         .from(".part-3", 0.7, ideaTextTrans)
         .to(".part-3", 0.7, ideaTextTransLeave, "+=3")
-        .from(".words", 0.9, ideaTextTrans)
-        .to(".words", 0.9, ideaTextTransLeave, "+=14.5")
         .from(".PS", 0.7, ideaTextTrans)
         .to(".PS", 0.7, ideaTextTransLeave, "+=6")
         
