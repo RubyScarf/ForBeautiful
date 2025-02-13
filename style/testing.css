@@ -46,11 +46,3 @@ body {
   text-align: center;
   font-size: 1.5rem;
 } */
-
-.main p {
-  font-size: 1rem;
-  left: 0;
-  right: 0;
-  font-family: 'Poppins', sans-serif;
-  padding: .5rem
-}
