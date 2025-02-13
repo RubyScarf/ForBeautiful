@@ -21,15 +21,17 @@ body {
 
 .container > div {
   left: 0;
-  position: absolute;
   right: 0;
   top: 20vh;
 }
 
 .container p {
-  font-size: 1.1rem; /* Friendly, readable size */
-  line-height: 1.6; /* Spacing for readability */
-  margin-bottom: 1rem;
+  line-height: 1.1; /* Spacing for readability */
+  font-size: 1.5rem;
+  left: 0;
+  right: 0;
+  font-family: 'Poppins', sans-serif;
+  padding: 0.5rem
 }
 
 /* .container p:first-of-type{
@@ -48,7 +50,6 @@ body {
 .main p {
   font-size: 1rem;
   left: 0;
-  position: absolute;
   right: 0;
   font-family: 'Poppins', sans-serif;
   padding: .5rem
