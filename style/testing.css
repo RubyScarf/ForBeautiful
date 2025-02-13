@@ -11,7 +11,7 @@ body {
   height: 100vh;
   margin: 0 auto;
   overflow: hidden;
-  position: absolute;
+  position: relative;
   text-align: center;
   visibility: visible;
   width: 100vw;
