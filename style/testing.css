@@ -30,18 +30,18 @@ body {
   left: 0;
   right: 0;
   font-family: 'Poppins', sans-serif;
-  padding: 1rem
+  padding: 0.5rem auto
 }
 
-/* .container p:first-of-type{
+.when{
   color: #8a7274;
   font-size: 0.9rem;
   text-align: center;
-} */
+} 
 
-/* .container p:last-of-type {
+.PS {
   font-weight: bold;
   color: #0077b6;
   text-align: center;
   font-size: 1.5rem;
-} */
+} 
