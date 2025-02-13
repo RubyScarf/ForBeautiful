@@ -20,7 +20,7 @@ body {
 
 .container > div {
   left: 0;
-  position: absolute;
+  position: relative;
   right: 0;
   top: 20vh;
 }
@@ -47,7 +47,7 @@ body {
 .main p {
   font-size: 2rem;
   left: 0;
-  position: absolute;
+  position: relative;
   right: 0;
   font-family: 'Poppins', sans-serif;
   padding: .5rem
