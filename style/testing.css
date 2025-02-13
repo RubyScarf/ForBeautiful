@@ -11,11 +11,12 @@ body {
   height: 100vh;
   margin: 0 auto;
   overflow: hidden;
-  position: relative;
+  position: absolute;
   text-align: center;
   visibility: visible;
   width: 100vw;
   color: #fff;
+  font-size: 1rem;
 }
 
 .container > div {
