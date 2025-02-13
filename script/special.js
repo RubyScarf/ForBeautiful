@@ -59,7 +59,7 @@ const animationTimeline = () => {
     // Redirect on button click
     const myBtn = document.getElementById("giftbox");
     myBtn.addEventListener("click", () => {
-        window.location.href = "special.html";
+        window.location.href = "testing.html";
     });
 };
 
