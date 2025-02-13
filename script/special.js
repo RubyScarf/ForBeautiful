@@ -34,8 +34,10 @@ const animationTimeline = () => {
 
 // Timeline animations
     tl.to(".container", 0.6, { visibility: "visible" })
-        .from(".words", 0.9, ideaTextTrans)
-        .to(".words", 0.9, ideaTextTransLeave, "+=19.5")
+        .from(".words-1", 0.9, ideaTextTrans)
+        .to(".words-1", 0.9, ideaTextTransLeave, "+=19.5")
+        .from(".words-2", 0.9, ideaTextTrans)
+        .to(".words-2", 0.9, ideaTextTransLeave, "+=19.5")
         .from(".when", 0.7, ideaTextTrans)
         .to(".when", 0.7, ideaTextTransLeave, "+=4")
         .from(".part-0", 0.7, ideaTextTrans)
