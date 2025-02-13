@@ -15,6 +15,7 @@ body {
   text-align: center;
   visibility: visible;
   width: 100vw;
+  color: #fff;
 }
 
 .container > div {
