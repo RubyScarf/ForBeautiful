@@ -37,12 +37,12 @@ body {
   text-align: center;
 } */
 
-.container p:last-of-type {
-  font-weight: bold; /* Highlight the heartfelt message */
-  color: #0077b6; /* A friendly blue tone */
+/* .container p:last-of-type {
+  font-weight: bold;
+  color: #0077b6;
   text-align: center;
   font-size: 1.5rem;
-}
+} */
 
 .main p {
   font-size: 2rem;
