@@ -11,7 +11,7 @@ body {
   height: 100vh;
   margin: 0 auto;
   overflow: hidden;
-  position: relative;
+  position: absolute;
   text-align: center;
   visibility: visible;
   width: 100vw;
@@ -33,13 +33,13 @@ body {
   padding: 0.5vh;
 }
 
-.when{
+p.when{
   color: #8a7274;
   font-size: 0.9rem;
   text-align: center;
 } 
 
-.PS {
+p.PS {
   font-weight: bold;
   color: #0077b6;
   text-align: center;
