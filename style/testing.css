@@ -62,3 +62,8 @@ p.PS {
   text-align: center;
   font-size: 1rem;
 } 
+
+replaypic {
+  height: 50px;
+  width: 50px;
+}
