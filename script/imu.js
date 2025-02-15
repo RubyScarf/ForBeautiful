@@ -32,6 +32,53 @@ const animationTimeline = () => {
         skewX: "-15deg"
     };
 
+    // Slide-in effect (from left to center)
+    const slideIn = {
+        opacity: 1,
+        x: 0,
+        duration: 0.7,
+        ease: "power2.out"
+    };
+
+    // Slide-out effect (to the right)
+    const slideOut = {
+        opacity: 0,
+        x: 100,
+        duration: 0.7,
+        ease: "power2.in"
+    };
+
+    const animationTimeline = () => {
+    const tl = gsap.timeline();
+
+    // Slide-in effect (with wiggle)
+    const slideInWiggle = {
+        opacity: 1,
+        x: 0,
+        duration: 0.7,
+        ease: "power2.out",
+        onStart: function () {
+            gsap.fromTo(".wiggle", 
+                { rotation: -5 }, 
+                { rotation: 5, duration: 0.1, repeat: 5, yoyo: true, ease: "sine.inOut" }
+            );
+        }
+    };
+
+    // Slide-out effect (with wiggle)
+    const slideOutWiggle = {
+        opacity: 0,
+        x: 100,
+        duration: 0.7,
+        ease: "power2.in",
+        onStart: function () {
+            gsap.fromTo(".wiggle", 
+                { rotation: -5 }, 
+                { rotation: 5, duration: 0.1, repeat: 5, yoyo: true, ease: "sine.inOut" }
+            );
+        }
+    };
+
 // Timeline animations
     tl.to(".container", 0.7, { visibility: "visible" })
         .from(".text-1", 0.7, ideaTextTrans)
