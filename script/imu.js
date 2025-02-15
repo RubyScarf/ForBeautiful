@@ -77,9 +77,6 @@ const animationTimeline = () => {
         }
     };
 
-    const animationTimeline = () => {
-    const tl = gsap.timeline();
-
 // Timeline animations
     tl.to(".container", 0.7, { visibility: "visible" })
         .from(".text-1", 0.7, ideaTextTrans)
