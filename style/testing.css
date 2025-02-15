@@ -1,20 +1,23 @@
-html {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
+html, body {
+  height: 100%;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
+  width: 100vw;
   margin: 0 auto;
   overflow: hidden;
-  position: absolute;
+  position: relative;
   text-align: center;
   visibility: visible;
-  width: 100vw;
   font-size: 1rem;
 }
 
@@ -25,12 +28,17 @@ body {
 }
 
 .container p {
+  position: absolute;
   line-height: 1.1; /* Spacing for readability */
   font-size: 1.5rem;
-  left: 0;
-  right: 0;
+  text-align: center;
+  width: 100%;
   font-family: 'Poppins', sans-serif;
   padding: 0.5vh;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
 }
 
 p.when{
