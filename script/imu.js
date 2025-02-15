@@ -54,6 +54,8 @@ const animationTimeline = () => {
         .to(".text-9", 0.7, ideaTextTransLeave, "+=5")
         .from(".text-10", 0.7, ideaTextTrans)
         .to(".text-10", 0.7, ideaTextTransLeave, "+=5")
+        .from(".replaybutton", 0.7, ideaTextTrans)
+        .to(".replaybutton",0.7, ideaTextLeave, "+=5")
         
 
     // Restart animation on button click
