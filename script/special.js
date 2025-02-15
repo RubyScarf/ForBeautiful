@@ -49,7 +49,7 @@ const animationTimeline = () => {
         .from(".part-3", 0.7, ideaTextTrans)
         .to(".part-3", 0.7, ideaTextTransLeave, "+=5")
         .from(".PS", 0.7, ideaTextTrans)
-        .to(".PS", 0.7, ideaTextTransLeave, "+=6")
+        .to(".PS", 2, ideaTextTransLeave, "+=6")
         
 
     // Restart animation on button click
