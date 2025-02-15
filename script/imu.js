@@ -1,4 +1,4 @@
-const animationTimeline = () => {
+econst animationTimeline = () => {
     // Initialize GSAP timeline
     const tl = gsap.timeline();
 
@@ -57,7 +57,6 @@ const animationTimeline = () => {
         .from(".replaybutton", 0.7, ideaTextTrans)
         .to(".replaybutton",0.7, ideaTextLeave, "+=5")
         
-
     // Restart animation on button click
     const replyBtn = document.getElementById("replay");
     replyBtn.addEventListener("click", () => {
@@ -65,7 +64,7 @@ const animationTimeline = () => {
     });
 
     // Redirect on button click
-    const myBtn = document.getElementById("giftbox");
+    const myBtn = document.getElementById("replay");
     myBtn.addEventListener("click", () => {
         window.location.href = "imsorry.html";
     });
