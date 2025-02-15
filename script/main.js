@@ -92,11 +92,7 @@ const animationTimeline = () => {
             y: -25,
             rotationZ: -45,
         }, "-=2")
-
-        
-        .from(".hat", 0.8, { opacity: 0, scale: 1, ease: "bounce.out" }) // Appears normally
-        .to(".hat", 1, { x: 80, y: -30, zIndex: 5, ease: "power1.inOut" }) // Lands at a different position
-
+        .from(".hat", 0.5, { x: 200, y: 350, rotation: -180, opacity: 0 })
         .staggerFrom(".wish-hbd span", 0.7, {
             opacity: 0,
             y: -50,
