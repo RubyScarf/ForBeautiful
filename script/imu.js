@@ -48,9 +48,7 @@ const animationTimeline = () => {
         ease: "power2.in"
     };
 
-    const animationTimeline = () => {
-    const tl = gsap.timeline();
-
+    
     // Slide-in effect (with wiggle)
     const slideInWiggle = {
         opacity: 1,
@@ -78,6 +76,9 @@ const animationTimeline = () => {
             );
         }
     };
+
+    const animationTimeline = () => {
+    const tl = gsap.timeline();
 
 // Timeline animations
     tl.to(".container", 0.7, { visibility: "visible" })
