@@ -7,6 +7,21 @@ html, body {
   overflow: hidden;
 }
 
+header {
+  position: fixed;  /* Keeps it in place even when scrolling */
+  top: 0;           /* Locks it to the top */
+  left: 50%;        /* Moves it to the center */
+  transform: translateX(-50%); /* Centers it exactly */
+  width: auto;      /* Adjusts width based on content */
+  text-align: center;
+  background-color: #fff; /* Optional: Add background color */
+  padding: 10px 20px; /* Optional: Adjust spacing */
+  z-index: 1000; /* Ensures it stays above other content */
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -33,7 +48,7 @@ html, body {
   font-size: 1.5rem;
   text-align: center;
   width: 90%;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'FreeMono', monospace;
   padding: 1vh;
   left: 50%;
   top: 50%;
