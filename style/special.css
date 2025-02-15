@@ -1,20 +1,24 @@
-html {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
+html, body {
+  height: 100%;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
+  width: 90vw;
   margin: 0 auto;
-  overflow: auto;
+  overflow: hidden;
   position: relative;
   text-align: center;
   visibility: visible;
-  width: 100vw;
+  font-size: 1rem;
 }
 
 .container > div {
@@ -24,34 +28,22 @@ body {
 }
 
 .container p {
-  line-height: 1.5; /* Spacing for readability */
+  position: absolute;
+  line-height: 1.4; /* Spacing for readability */
   font-size: 1.5rem;
-  left: 0;
-  right: 0;
-  font-family: 'Poppins', sans-serif;
-  padding: 0.5rem
-}
-
-.container p:first-of-type{
-  color: #8a7274;
-  font-size: 0.9rem;
   text-align: center;
+  width: 90%;
+  font-family: 'Noto Sans', sans-serif;
+  padding: 1vh;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
 }
 
-.container p:last-of-type{
-  font-weight: bold; /* Highlight the heartfelt message */
-  color: #0077b6; /* A friendly blue tone */
+p.PS {
+  font-weight: bold;
+  color: #0077b6;
   text-align: center;
-  font-size: 0.8rem;
-}
-
-.text {
-    width: 90vw;  /* Default for small screens (phones) */
-    margin: 0 auto;
-}
-
-@media (min-width: 768px) {  /* Apply to tablets and larger screens */
-    .text {
-        width: 75vw;  /* 3/4 of the screen width */
-    }
-}
+  font-size: 1rem;
+} 
